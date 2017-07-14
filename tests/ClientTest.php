@@ -47,6 +47,36 @@
             $this->assertEquals($new_name, $result);
         }
 
+        function testGetStylistID()
+        {
+            // Arrange
+            $name = "Mrs. N.";
+            $stylist_id = 3;
+            $test_client = new Client($name, $stylist_id);
+
+            // Act
+            $result = $test_client->getStylistID();
+
+            // Assert
+            $this->assertEquals($stylist_id, $result);
+        }
+
+        function testSetStylistID()
+        {
+            // Arrange
+            $name = "Mrs. N.";
+            $stylist_id = 3;
+            $test_client = new Client($name, $stylist_id);
+            $new_stylist_id = 4;
+
+            // Act
+            $test_client->setStylistID($new_stylist_id);
+            $result = $test_client->getStylistID();
+
+            // Assert
+            $this->assertEquals($new_stylist_id, $result);
+        }
+
         function testSave()
         {
           // Arrange
