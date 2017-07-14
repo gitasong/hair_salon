@@ -165,8 +165,8 @@
         function testGetClients()
         {
             //Arrange
-            $name = "Alison";
-            $test_stylist = new Stylist($name);
+            $stylist_name = "Alison";
+            $test_stylist = new Stylist($stylist_name);
             $test_stylist->save();
             $test_stylist_id = $test_stylist->getID();
 
@@ -175,7 +175,7 @@
             $test_client->save();
 
             $client_name_2 = "Mrs. D.";
-            $test_client_2 = new Client($name_2, $test_stylist_id);
+            $test_client_2 = new Client($client_name_2, $test_stylist_id);
             $test_client_2->save();
             //Act
             $result = $test_stylist->getClients();
