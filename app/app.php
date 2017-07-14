@@ -13,6 +13,10 @@
         'twig.path' => __DIR__.'/../views'
     ));
 
+    $app->get("/", function() use ($app) {
+        return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
+    });
+
     $app->get("/stylists", function() use ($app) {
         return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
     });
