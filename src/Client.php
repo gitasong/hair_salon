@@ -38,6 +38,17 @@
             return $this->id;
         }
 
+        function save()
+        {
+            $executed = $GLOBALS['DB']->exec("INSERT INTO clients (name, stylist_id) VALUES ('{$this->getName()}', '{$this->getStylistID()}')");
+            if ($executed) {
+                $this->id= $GLOBALS['DB']->lastInsertId();
+                return true;
+            } else {
+                return false;
+            }
+        }
+
     }
 
 ?>

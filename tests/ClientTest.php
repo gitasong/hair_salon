@@ -79,20 +79,21 @@
             // Assert
             $this->assertEquals($new_stylist_id, $result);
         }
-    
-    //     function testSave()
-    //     {
-    //       // Arrange
-    //       $name = "Mrs. N.";
-    //       $test_client = new Client($name, $stylist_id);
-    //
-    //       // Act
-    //       $executed = $test_client->save();
-    //
-    //       // Assert
-    //       $this->assertTrue($executed, "Client not successfully saved to database");
-    //     }
-    //
+
+        function testSave()
+        {
+          // Arrange
+          $name = "Mrs. N.";
+          $stylist_id = 3;
+          $test_client = new Client($name, $stylist_id);
+
+          // Act
+          $executed = $test_client->save();
+
+          // Assert
+          $this->assertTrue($executed, "Client not successfully saved to database");
+        }
+
     //     function testGetID()
     //     {
     //         // Arrange
