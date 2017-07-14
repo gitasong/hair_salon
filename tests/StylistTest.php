@@ -114,21 +114,21 @@
             $this->assertEquals($test_stylist, $result);
         }
 
-        // function testUpdate()
-        // {
-        //     // Arrange
-        //     $name = "Alison";
-        //     $test_stylist = new Stylist($name);
-        //     $test_stylist->save();
-        //     $new_name = "Tricia";
-        //
-        //     // Act
-        //     $test_stylist->update($new_name);
-        //
-        //     // Assert
-        //     $this->assertEquals("Tricia", $test_stylist->getName());
-        // }
-        //
+        function testUpdate()
+        {
+            // Arrange
+            $name = "Alison";
+            $test_stylist = new Stylist($name);
+            $test_stylist->save();
+            $new_name = "Tricia";
+
+            // Act
+            $test_stylist->update($new_name);
+
+            // Assert
+            $this->assertEquals("Tricia", $test_stylist->getName());
+        }
+
         // function testDelete()
         // {
         //     // Arrange
