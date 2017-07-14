@@ -23,10 +23,15 @@ Simple app allowing the user to view, add, and edit clients and stylists at a fi
     * In MAMP, click 'Open WebStart page'. The MAMP WebStart page will open in your browser.
     * Click on the Tools dropdown menu at the top of the WebStart page and choose phpMyAdmin.
     * Once phpMyAdmin opens in your web browser, click the Import tab > 'Browse' button and navigate to the hair_salon.sql file in the project directory.
+* MySQL commands to recreate hair_salon database:
+    * CREATE DATABASE hair_salon
+    * USE hair_salon
+    * CREATE TABLE stylists (name VARCHAR (255), id serial PRIMARY KEY);
+    * CREATE TABLE clients (name VARCHAR (255), stylist_id INT, id serial PRIMARY KEY);
 
 ## Known Bugs
 
-Right now, the user will have to type _____ into the URL bar to add a client.
+The view individual clients and edit client routes are missing currently.
 
 ## Support and contact details
 
@@ -40,8 +45,8 @@ You can contact me at gitasong@github.io.
 * Twig 1.0
 * Composer
 * MAMP 4.1.1
-* PHPUnit (for testing)
-* MySQL
+* PHPUnit 4.5.x (for testing)
+* MySQL 5.6.35
 * phpMyAdmin
 
 ### License
