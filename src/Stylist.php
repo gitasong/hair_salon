@@ -88,6 +88,12 @@
             if (!$executed) {
                 return false;
             }
+            $executed = $GLOBALS['DB']->exec("DELETE FROM clients WHERE stylist_id = {$this->getID()};");
+            if (!$executed) {
+                return false;
+            } else {
+                return true;
+            }
         }
 
     }
