@@ -3,19 +3,19 @@
     class Client
     {
         private $name;
-        private $tylist_id;
+        private $stylist_id;
         private $id;
 
-        function __construct($name, $stylist_id, $id = null)
+        function __construct($name, $stylist_id = null, $id = null)
         {
             $this->name = $name;
-            $this->$stylist_id;
+            $this->stylist_id = $stylist_id;
             $this->id = $id;
         }
 
         function setName($new_name)
         {
-            $this->name = (string) $new_name;
+          $this->name = (string) $new_name;
         }
 
         function getName()
