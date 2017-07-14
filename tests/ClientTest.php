@@ -151,24 +151,26 @@
             $this->assertEquals([], $result);
         }
 
-    //     function testFind()
-    //     {
-    //         // Arrange
-    //         $name = "Mrs. N.";
-    //         $test_client = new Client($name, $stylist_id);
-    //         $test_client->save();
-    //
-    //         $name2 = "Mrs. D.";
-    //         $test_client_2 = new Client($name2);
-    //         $test_client_2->save();
-    //
-    //         // Act
-    //         $result = Client::find($test_client->getID());
-    //
-    //         // Assert
-    //         $this->assertEquals($test_client, $result);
-    //     }
-    //
+        function testFind()
+        {
+            // Arrange
+            $name = "Mrs. N.";
+            $stylist_id = 3;
+            $test_client = new Client($name, $stylist_id);
+            $test_client->save();
+
+            $name2 = "Mrs. D.";
+            $stylist_id_2 = 4;
+            $test_client_2 = new Client($name2, $stylist_id_2);
+            $test_client_2->save();
+
+            // Act
+            $result = Client::find($test_client->getID());
+
+            // Assert
+            $this->assertEquals($test_client, $result);
+        }
+
     //     function testUpdate()
     //     {
     //         // Arrange
