@@ -27,6 +27,19 @@
             $this->assertEquals($name, $result);
         }
 
+        function testSave()
+        {
+          // Arrange
+          $name = "Alison";
+          $test_stylist = new Stylist($name);
+
+          // Act
+          $executed = $test_stylist->save();
+
+          // Assert
+          $this->assertTrue($executed, "Stylist not successfully saved to database");
+        }
+
     }
 
 ?>
