@@ -34,21 +34,22 @@
             $this->assertEquals($name, $result);
         }
 
-    //     function testSetName()
-    //     {
-    //         // Arrange
-    //         $name = "Mrs. N.";
-    //         $test_client = new Client($name, $stylist_id);
-    //         $new_name = "Mr. F.";
-    //
-    //         // Act
-    //         $test_client->setName($new_name);
-    //         $result = $test_client->getName();
-    //
-    //         // Assert
-    //         $this->assertEquals($new_name, $result);
-    //     }
-    //
+        function testSetName()
+        {
+            // Arrange
+            $name = "Mrs. N.";
+            $stylist_id = 3;
+            $test_client = new Client($name, $stylist_id);
+            $new_name = "Mr. F.";
+
+            // Act
+            $test_client->setName($new_name);
+            $result = $test_client->getName();
+
+            // Assert
+            $this->assertEquals($new_name, $result);
+        }
+
     //     function testGetStylistID()
     //     {
     //         // Arrange
