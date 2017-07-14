@@ -40,6 +40,20 @@
           $this->assertTrue($executed, "Stylist not successfully saved to database");
         }
 
+        function testGetId()
+        {
+            // Arrange
+            $name = "Alison";
+            $test_stylist = new Stylist($name);
+            $test_stylist->save();
+
+            // Act
+            $result = $test_stylist->getId();
+
+            // Assert
+            $this->assertEquals(true, is_numeric($result));
+        }
+
     }
 
 ?>
