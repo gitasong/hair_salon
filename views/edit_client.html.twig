@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Famous Stylists Hair Salon</title>
+    </head>
+    <body>
+        <h1>Famous Stylists Hair Salon</h1>
+
+        <h3>Edit Client: {{ client.getName }}</h1>
+
+        <form action="/clients/{{ client.getID }}" method="post">
+            <input name="_method" type="hidden" value="patch">
+
+            <label for="name">Rename Client: </label>
+            <input id="name" name="name" type="text" required>
+
+            <label for="stylist_id">Reassign Client to Stylist ID: </label>
+            <input id="stylist_id" name="stylist_id" type="number" required>
+
+            <button type="submit">Update</button>
+        </form>
+
+        <form action="/clients/{{ client.getID }}" method="post">
+            <input name="_method" type="hidden" value="delete">
+
+            <button type="submit">Delete Client</button>
+        </form>
+        <p><a href='/'>Home</a></p>
+    </body>
+</html>
