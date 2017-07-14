@@ -24,6 +24,7 @@
         {
             // Arrange
             $name = "Mrs. N.";
+            $stylist_id = 3;
             $test_client = new Client($name, $stylist_id);
 
             // Act
