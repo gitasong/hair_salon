@@ -1,6 +1,6 @@
 <?php
 
-class Stylist
+    class Stylist
     {
         private $name;
         private $id;
