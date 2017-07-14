@@ -96,24 +96,24 @@
             $this->assertEquals([], $result);
         }
 
-        // function testFind()
-        // {
-        //     // Arrange
-        //     $name = "Alison";
-        //     $test_stylist = new Stylist($name);
-        //     $test_stylist->save();
-        //
-        //     $name2 = "Becky";
-        //     $test_stylist_2 = new Stylist($name2);
-        //     $test_stylist_2->save();
-        //
-        //     // Act
-        //     $result = Stylist::find($test_stylist->getID());
-        //
-        //     // Assert
-        //     $this->assertEquals($test_stylist, $result);
-        // }
-        //
+        function testFind()
+        {
+            // Arrange
+            $name = "Alison";
+            $test_stylist = new Stylist($name);
+            $test_stylist->save();
+
+            $name2 = "Becky";
+            $test_stylist_2 = new Stylist($name2);
+            $test_stylist_2->save();
+
+            // Act
+            $result = Stylist::find($test_stylist->getID());
+
+            // Assert
+            $this->assertEquals($test_stylist, $result);
+        }
+
         // function testUpdate()
         // {
         //     // Arrange
