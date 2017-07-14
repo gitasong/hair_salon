@@ -6,10 +6,10 @@
         private $tylist_id;
         private $id;
 
-        function __construct($name, $id = null)
+        function __construct($name, $stylist_id, $id = null)
         {
             $this->name = $name;
-            $this->$tylist_id;
+            $this->$stylist_id;
             $this->id = $id;
         }
 
@@ -20,7 +20,7 @@
 
         function getName()
         {
-            return $this->name;
+
         }
 
         function setStylistID($new_stylist_id)
