@@ -88,10 +88,20 @@
         {
             $executed = $GLOBALS['DB']->exec("UPDATE clients SET name = '{$new_name}' WHERE id = {$this->getID()};");
             if ($executed) {
-               $this->setName($new_name);
-               return true;
+                $this->setName($new_name);
+                return true;
             } else {
-               return false;
+                return false;
+            }
+        }
+
+        function delete()
+        {
+            $executed = $GLOBALS['DB']->exec("DELETE FROM clients WHERE id = {$this->getID()};");
+            if ($executed) {
+                return true;
+            } else {
+                return false;
             }
         }
 
