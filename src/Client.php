@@ -20,7 +20,7 @@
 
         function getName()
         {
-
+            return $this->name;
         }
 
         function setStylistID($new_stylist_id)
