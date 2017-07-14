@@ -196,7 +196,7 @@
             $test_client->save();
 
             $name_2 = "Mrs. D.";
-            $stylist_id = 4;
+            $stylist_id_2 = 4;
             $test_client_2 = new Client($name_2, $stylist_id_2);
             $test_client_2->save();
 
