@@ -82,6 +82,14 @@
             }
         }
 
+        function delete()
+        {
+            $executed = $GLOBALS['DB']->exec("DELETE FROM stylists WHERE id = {$this->getID()};");
+            if (!$executed) {
+                return false;
+            }
+        }
+
     }
 
 ?>

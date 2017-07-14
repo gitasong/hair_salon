@@ -129,23 +129,23 @@
             $this->assertEquals("Tricia", $test_stylist->getName());
         }
 
-        // function testDelete()
-        // {
-        //     // Arrange
-        //     $name = "Alison";
-        //     $test_stylist = new Stylist($name);
-        //     $test_stylist->save();
-        //
-        //     $name_2 = "Becky";
-        //     $test_stylist_2 = new Stylist($name_2);
-        //     $test_stylist_2->save();
-        //
-        //     // Act
-        //     $test_stylist->delete();
-        //
-        //     // Assert
-        //     $this->assertEquals([$test_stylist_2], Stylist::getAll());
-        // }
+        function testDelete()
+        {
+            // Arrange
+            $name = "Alison";
+            $test_stylist = new Stylist($name);
+            $test_stylist->save();
+
+            $name_2 = "Becky";
+            $test_stylist_2 = new Stylist($name_2);
+            $test_stylist_2->save();
+
+            // Act
+            $test_stylist->delete();
+
+            // Assert
+            $this->assertEquals([$test_stylist_2], Stylist::getAll());
+        }
 
     }
 
