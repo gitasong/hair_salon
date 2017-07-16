@@ -31,6 +31,12 @@
         return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
     });
 
+    // renders single stylist template
+    $app->get("/stylist/{id}", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist));
+    });
+
     // renders form to edit/delete single stylist
     $app->get("/stylists/{id}/edit", function($id) use ($app) {
         $stylist = Stylist::find($id);
