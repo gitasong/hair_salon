@@ -37,6 +37,12 @@
         return $app['twig']->render('edit_stylist.html.twig', array('stylist' => $stylist));
     });
 
+    // renders form to edit/delete single stylist FROM BUTTON/FORM
+    $app->post("/stylists/{id}/edit", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        return $app['twig']->render('edit_stylist.html.twig', array('stylist' => $stylist));
+    });
+
     // form handler for edit_stylist.html (edit/delete stylist); returns one to view stylist/add clients
     $app->patch("/stylists/{id}", function($id) use ($app) {
         $name = $_POST['name'];
