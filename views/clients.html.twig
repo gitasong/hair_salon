@@ -9,7 +9,17 @@
             <p>Here are all the clients at our salon:</p>
             <ul>
                 {% for client in clients %}
-                    <li>{{ client.getName }}</li>
+                    <li>
+                        {{ client.getName }}
+                        <form action="/clients/{{ client.getID }}/edit" method="post">
+                            <button type="submit">Edit Client</button>
+                        </form>
+                        <form action="/clients/{{ client.getID }}" method="post">
+                            <input name="_method" type="hidden" value="delete">
+
+                            <button type="submit">Delete Client</button>
+                        </form>
+                    </li>
                 {% endfor %}
             </ul>
         {% endif %}
