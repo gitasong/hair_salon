@@ -12,7 +12,7 @@
             <ul>
                 {% for stylist in stylists %}
                     <li>
-                        <a href="/stylist/{{ stylist.getID }}">{{ stylist.getName }}</a>
+                        <h4><a href="/stylist/{{ stylist.getID }}">{{ stylist.getName }}</a></h4>
                         <span>
                             <form action="/stylists/{{ stylist.getID }}/edit" method="post">
                                 <button type="submit">Edit Stylist</button>
