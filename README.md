@@ -1,12 +1,12 @@
 # Famous Stylists Hair Salon
 
-#### Simple app allowing the user to view, add, and edit clients and stylists at a fictitious hair salon.
+#### Simple app allowing the user to view, add, edit, and delete clients and stylists at a fictitious hair salon.
 
-#### By _**{List of contributors}**_
+#### By Nicole Freed
 
 ## Description
 
-Simple app allowing the user to view, add, and edit clients and stylists at a fictitious hair salon. The app also displays a list of clients for a given stylist.
+Simple app allowing the user to view, add, edit, and delete clients and stylists at a fictitious hair salon. The app also displays a list of clients for a given stylist when the stylist's name is clicked.s
 
 ## Setup/Installation Requirements
 
@@ -17,7 +17,6 @@ Simple app allowing the user to view, add, and edit clients and stylists at a fi
 * In Terminal, navigate to the main project directory and install the necessary dependencies (Silex and Twig) using <composer install>.
 * In Terminal, navigate to the web folder inside the main project directory and start your PHP server using <php -S localhost:8000>.
 * Type localhost:8000 in your browser URL window to start the app.
-* The form to edit a client is at _____.
 * To view and edit the database:
     * Open MAMP. Click on Preferences > Ports tab and set the Apache port to 8888 and the MySQL port to 8889.
     * In MAMP, click 'Open WebStart page'. The MAMP WebStart page will open in your browser.
