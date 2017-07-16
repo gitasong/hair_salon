@@ -179,12 +179,13 @@
             $test_client = new Client($name, $stylist_id);
             $test_client->save();
             $new_name = "Mr. F.";
+            $new_stylist_id = 4;
 
             // Act
-            $test_client->update($new_name);
+            $test_client->update($new_name, $new_stylist_id);
 
             // Assert
-            $this->assertEquals("Mr. F.", $test_client->getName());
+            $this->assertEquals(["Mr. F.", 4],  [$test_client->getName(), $test_client->getStylistID()]);
         }
 
         function testDelete()
