@@ -10,7 +10,7 @@
             <ul>
                 {% for client in clients %}
                     <li>
-                        {{ client.getName }}
+                        <a href="/client/{{ client.getID }}">{{ client.getName }}</a>
                         <form action="/clients/{{ client.getID }}/edit" method="post">
                             <button type="submit">Edit Client</button>
                         </form>
