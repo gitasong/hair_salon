@@ -81,6 +81,12 @@
         return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
     });
 
+    // renders single client template
+    $app->get("/client/{id}", function($id) use ($app) {
+        $client = Client::find($id);
+        return $app['twig']->render('client.html.twig', array('client' => $client));
+    });
+
     // renders form to edit/delete single client
     $app->get("/clients/{id}/edit", function($id) use ($app) {
         $client = Client::find($id);
