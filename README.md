@@ -44,6 +44,7 @@ You can contact me at gitasong@github.io.
 * Twig 1.0
 * Composer
 * MAMP 4.1.1
+* Apache server
 * PHPUnit 4.5.x (for testing)
 * MySQL 5.6.35
 * phpMyAdmin
