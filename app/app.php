@@ -81,6 +81,12 @@
         return $app['twig']->render('edit_client.html.twig', array('client' => $client));
     });
 
+    // renders form to edit/delete single stylist FROM BUTTON/FORM
+    $app->post("/stylists/{id}/edit", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        return $app['twig']->render('edit_stylist.html.twig', array('stylist' => $stylist));
+    });
+
     // form handler for edit_client.html (edit/delete cliet); returns one to view/add clients
     $app->patch("/clients/{id}", function($id) use ($app) {
         $name = $_POST['name'];
@@ -93,6 +99,12 @@
     $app->post("/delete_clients", function() use ($app) {
         Client::deleteAll();
         return $app['twig']->render('clients.html.twig');
+    });
+
+    $app->delete("/clients/{id}", function($id) use ($app) {
+        $client = Client::find($id);
+        $client->delete();
+        return $app['twig']->render('clients.html.twig', array('clients' => Client::getAll()));
     });
 
     return $app;
