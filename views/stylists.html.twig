@@ -13,14 +13,18 @@
                 {% for stylist in stylists %}
                     <li>
                         <a href="/stylist/{{ stylist.getID }}">{{ stylist.getName }}</a>
-                        <form action="/stylists/{{ stylist.getID }}/edit" method="post">
-                            <button type="submit">Edit Stylist</button>
-                        </form>
-                        <form action="/stylists/{{ stylist.getID }}" method="post">
-                            <input name="_method" type="hidden" value="delete">
+                        <span>
+                            <form action="/stylists/{{ stylist.getID }}/edit" method="post">
+                                <button type="submit">Edit Stylist</button>
+                            </form>
+                        </span>
+                        <span>
+                            <form action="/stylists/{{ stylist.getID }}" method="post">
+                                <input name="_method" type="hidden" value="delete">
 
-                            <button type="submit">Delete Stylist</button>
-                        </form>
+                                <button type="submit">Delete Stylist</button>
+                            </form>
+                        </span>
                     </li>
                 {% endfor %}
             </ul>
@@ -31,7 +35,9 @@
             <label for='name'>Stylist Name: </label>
             <input id='name' name='name' type='text' required>
 
-            <button type='submit'>Add Stylist</button>
+            <span>
+                <button type='submit'>Add Stylist</button>
+            </span>
         </form>
 
         <p><a href='/'>Home</a></p>
