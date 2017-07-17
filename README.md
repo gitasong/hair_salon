@@ -11,22 +11,24 @@ Simple app allowing the user to view, add, edit, and delete clients and stylists
 ## Setup/Installation Requirements
 
 * You'll need to have PHP installed on your computer. For install instructions, see https://www.learnhowtoprogram.com/php/getting-started-with-php/installing-php.
-* Clone the project directory from Terminal using <git clone https://github.com/gitasong/address-book-twig.git>.
+* Clone the project directory from Terminal using `git clone https://github.com/gitasong/address-book-twig.git`.
 * Unzip the project directory.
-* Install Composer on your computer following the install instructions at https://www.learnhowtoprogram.com/php/getting-started-with-php/installing-composer-and-configuration-for-mac for Mac and https://www.learnhowtoprogram.com/php/getting-started-with-php/installing-composer-and-configuration-for-windows for Windows.
-* In Terminal, navigate to the main project directory and install the necessary dependencies (Silex and Twig) using <composer install>.
-* In Terminal, navigate to the web folder inside the main project directory and start your PHP server using <php -S localhost:8000>.
-* Type localhost:8000 in your browser URL window to start the app.
+* Install Composer on your computer following the install instructions:
+    * Mac: https://www.learnhowtoprogram.com/php/getting-started-with-php/installing-composer-and-configuration-for-mac
+    * Windows: https://www.learnhowtoprogram.com/php/getting-started-with-php/installing-composer-and-configuration-for-windows for Windows.
+* In Terminal, navigate to the main project directory and install the necessary dependencies (Silex and Twig) using `composer install`.
+* In Terminal, navigate to the web folder inside the main project directory and start your PHP server using `php -S localhost:8000`.
+* Type `localhost:8000` in your browser URL window to start the app.
 * To view and edit the database:
-    * Open MAMP. Click on Preferences > Ports tab and set the Apache port to 8888 and the MySQL port to 8889.
-    * In MAMP, click 'Open WebStart page'. The MAMP WebStart page will open in your browser.
+    * Open MAMP. Click on `Preferences > Ports` tab and set the Apache port to 8888 and the MySQL port to 8889.
+    * In MAMP, click `Open WebStart page`. The MAMP WebStart page will open in your browser.
     * Click on the Tools dropdown menu at the top of the WebStart page and choose phpMyAdmin.
-    * Once phpMyAdmin opens in your web browser, click the Import tab > 'Browse' button and navigate to the hair_salon.sql file in the project directory.
+    * Once phpMyAdmin opens in your web browser, click the `Import` tab > `Browse` button and navigate to the `hair_salon.sql` file in the project directory.
 * MySQL commands to recreate hair_salon database:
-    * CREATE DATABASE hair_salon
-    * USE hair_salon
-    * CREATE TABLE stylists (name VARCHAR (255), id serial PRIMARY KEY);
-    * CREATE TABLE clients (name VARCHAR (255), stylist_id INT, id serial PRIMARY KEY);
+    * `CREATE DATABASE hair_salon`
+    * `USE hair_salon`
+    * `CREATE TABLE stylists (name VARCHAR (255), id serial PRIMARY KEY);`
+    * `CREATE TABLE clients (name VARCHAR (255), stylist_id INT, id serial PRIMARY KEY);`
 
 ## Known Bugs
 
