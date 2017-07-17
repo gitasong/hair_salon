@@ -35,9 +35,13 @@
             <label for='name'>Client Name: </label>
             <input id='name' name='name' type='text' required>
 
-            <label for='stylist_id'>Stylist ID: </label>
-            <input id='stylist_id' name='stylist_id' type='text' required>
-
+            <label for='stylist_id'>Stylist: </label>
+            <!-- <input id='stylist_id' name='stylist_id' type='text' required> -->
+            <select id="stylist_id" name="stylist_id">
+                {% for stylist in stylists %}
+                    <option value="{{ stylist.getID }}">{{ stylist.getName }}</option>
+                {% endfor %}
+            </select>
             <span>
                 <button type='submit'>Add Client</button>
             </span>
