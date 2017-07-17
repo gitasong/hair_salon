@@ -15,8 +15,13 @@
             <label for="name">Rename Client: </label>
             <input id="name" name="name" type="text" required>
 
-            <label for="stylist_id">Reassign Client to Stylist ID: </label>
-            <input id="stylist_id" name="stylist_id" type="number" required>
+            <label for="stylist_id">Reassign Client to Stylist: </label>
+            <!-- <input id="stylist_id" name="stylist_id" type="number" required> -->
+            <select id="stylist_id" name="stylist_id">
+                {% for stylist in stylists %}
+                    <option value="{{ stylist.getID }}">{{ stylist.getName }}</option>
+                {% endfor %}
+            </select>
 
             <button type="submit">Update</button>
         </form>

@@ -96,7 +96,7 @@
     // renders form to edit/delete single client FROM BUTTON/FORM
     $app->post("/clients/{id}/edit", function($id) use ($app) {
         $client = Client::find($id);
-        return $app['twig']->render('edit_client.html.twig', array('client' => $client));
+        return $app['twig']->render('edit_client.html.twig', array('client' => $client, 'stylists' => Stylist::getAll()));
     });
 
     // form handler for edit_client.html (edit/delete cliet); returns one to view/add clients
