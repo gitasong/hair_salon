@@ -106,20 +106,21 @@
         return $app['twig']->render('edit_client.html.twig', array('client' => $client, 'stylists' => Stylist::getAll()));
     });
 
-    // form handler for edit_client.html (edit/delete cliet); returns one to view/add clients
+    // form handler for edit_client.html (rename client); returns one to view/add clients
     $app->patch("/rename/{id}", function($id) use ($app) {
         $name = $_POST['name'];
         $client = Client::find($id);
-        $client->updateName($name);  // update also w/new stylist ID
+        $client->updateName($name);
         $stylist_id = $client->getStylistID();
         $stylist = Stylist::find($stylist_id);
         return $app['twig']->render('client.html.twig', array('client' => $client, 'stylist' => $stylist));
     });
 
+    // form handler for edit_client.html (reassign client to stylist); returns one to view/add clients
     $app->patch("/reassign/{id}", function($id) use ($app) {
-        $stylist_id = $_POST['stylist_id'];  // needs to grab data from new stylist field
+        $stylist_id = $_POST['stylist_id'];
         $client = Client::find($id);
-        $client->updateStylistID($stylist_id);  // update also w/new stylist ID
+        $client->updateStylistID($stylist_id);
         $stylist_id = $client->getStylistID();
         $stylist = Stylist::find($stylist_id);
         return $app['twig']->render('client.html.twig', array('client' => $client, 'stylist' => $stylist));
