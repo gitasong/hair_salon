@@ -89,7 +89,9 @@
     // renders single client template
     $app->get("/client/{id}", function($id) use ($app) {
         $client = Client::find($id);
-        return $app['twig']->render('client.html.twig', array('client' => $client));
+        $stylist_id = $client->getStylistID();
+        $stylist = Stylist::find($stylist_id);
+        return $app['twig']->render('client.html.twig', array('client' => $client, 'stylist' => $stylist));
     });
 
     // renders form to edit/delete single client
@@ -109,14 +111,18 @@
         $name = $_POST['name'];
         $client = Client::find($id);
         $client->updateName($name);  // update also w/new stylist ID
-        return $app['twig']->render('client.html.twig', array('client' => $client));
+        $stylist_id = $client->getStylistID();
+        $stylist = Stylist::find($stylist_id);
+        return $app['twig']->render('client.html.twig', array('client' => $client, 'stylist' => $stylist));
     });
 
     $app->patch("/reassign/{id}", function($id) use ($app) {
         $stylist_id = $_POST['stylist_id'];  // needs to grab data from new stylist field
         $client = Client::find($id);
         $client->updateStylistID($stylist_id);  // update also w/new stylist ID
-        return $app['twig']->render('client.html.twig', array('client' => $client));
+        $stylist_id = $client->getStylistID();
+        $stylist = Stylist::find($stylist_id);
+        return $app['twig']->render('client.html.twig', array('client' => $client, 'stylist' => $stylist));
     });
 
     $app->post("/delete_clients", function() use ($app) {
