@@ -9,21 +9,26 @@
 
         <h3>Edit Client: {{ client.getName }}</h1>
 
-        <form action="/clients/{{ client.getID }}" method="post">
+        <form action="/rename/{{ client.getID }}" method="post">
             <input name="_method" type="hidden" value="patch">
 
             <label for="name">Rename Client: </label>
-            <input id="name" name="name" type="text" required>
+            <input id="name" name="name" type="text">
 
+            <button type="submit">Rename Client</button>
+        </form>
+
+        <form action="/reassign/{{ client.getID }}" method="post">
+            <input name="_method" type="hidden" value="patch">
             <label for="stylist_id">Reassign Client to Stylist: </label>
             <!-- <input id="stylist_id" name="stylist_id" type="number" required> -->
-            <select id="stylist_id" name="stylist_id">
+            <select id="stylist_id" name="stylist_id" required>
                 {% for stylist in stylists %}
                     <option value="{{ stylist.getID }}">{{ stylist.getName }}</option>
                 {% endfor %}
             </select>
 
-            <button type="submit">Update</button>
+            <button type="submit">Reassign Client</button>
         </form>
 
         <form action="/clients/{{ client.getID }}" method="post">
