@@ -95,7 +95,7 @@
     // renders form to edit/delete single client
     $app->get("/clients/{id}/edit", function($id) use ($app) {
         $client = Client::find($id);
-        return $app['twig']->render('edit_client.html.twig', array('client' => $client));
+        return $app['twig']->render('edit_client.html.twig', array('client' => $client, 'stylists' => Stylist::getAll()));
     });
 
     // renders form to edit/delete single client FROM BUTTON/FORM
@@ -105,11 +105,17 @@
     });
 
     // form handler for edit_client.html (edit/delete cliet); returns one to view/add clients
-    $app->patch("/clients/{id}", function($id) use ($app) {
+    $app->patch("/rename/{id}", function($id) use ($app) {
         $name = $_POST['name'];
+        $client = Client::find($id);
+        $client->updateName($name);  // update also w/new stylist ID
+        return $app['twig']->render('client.html.twig', array('client' => $client));
+    });
+
+    $app->patch("/reassign/{id}", function($id) use ($app) {
         $stylist_id = $_POST['stylist_id'];  // needs to grab data from new stylist field
         $client = Client::find($id);
-        $client->update($name, $stylist_id);  // update also w/new stylist ID
+        $client->updateStylistID($stylist_id);  // update also w/new stylist ID
         return $app['twig']->render('client.html.twig', array('client' => $client));
     });
 
