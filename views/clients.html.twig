@@ -35,9 +35,9 @@
             <label for='name'>Client Name: </label>
             <input id='name' name='name' type='text' required>
 
-            <label for='stylist_id'>Stylist: </label>
+            <label for='stylist'>Stylist: </label>
             <!-- <input id='stylist_id' name='stylist_id' type='text' required> -->
-            <select id="stylist_id" name="stylist_id">
+            <select id="stylist" name="stylist">
                 {% for stylist in stylists %}
                     <option value="{{ stylist.getID }}">{{ stylist.getName }}</option>
                 {% endfor %}

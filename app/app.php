@@ -133,7 +133,7 @@
     $app->delete("/clients/{id}", function($id) use ($app) {
         $client = Client::find($id);
         $client->delete();
-        return $app['twig']->render('clients.html.twig', array('clients' => Client::getAll()));
+        return $app['twig']->render('clients.html.twig', array('clients' => Client::getAll(), 'stylists' => Stylist::getAll()));
     });
 
     return $app;
