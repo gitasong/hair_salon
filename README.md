@@ -32,7 +32,7 @@ Simple app allowing the user to view, add, edit, and delete clients and stylists
 
 ## Known Bugs
 
-Adding a client without choosing a stylist from the dropdown will return an error.
+No known bugs.
 
 ## Support and contact details
 
