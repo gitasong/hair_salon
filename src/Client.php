@@ -84,13 +84,21 @@
             return $found_client;
         }
 
-        function update($new_name, $new_stylist_id) // need to update w/new stylist_id
+        function updateName($new_name)
         {
-            $part_1 = $GLOBALS['DB']->exec("UPDATE clients SET name = '{$new_name}' WHERE id = {$this->getID()};");
-            $part_2 = $GLOBALS['DB']->exec("UPDATE clients SET stylist_id = '{$new_stylist_id}' WHERE id = {$this->getID()};");
-            $executed = $part_1 && $part_2;
+            $executed = $GLOBALS['DB']->exec("UPDATE clients SET name = '{$new_name}' WHERE id = {$this->getID()};");
             if ($executed) {
                 $this->setName($new_name);
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function updateStylistID($new_stylist_id)
+        {
+            $executed = $GLOBALS['DB']->exec("UPDATE clients SET stylist_id = '{$new_stylist_id}' WHERE id = {$this->getID()};");
+            if ($executed) {
                 $this->setStylistID($new_stylist_id);
                 return true;
             } else {

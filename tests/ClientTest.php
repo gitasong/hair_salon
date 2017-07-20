@@ -171,7 +171,7 @@
             $this->assertEquals($test_client, $result);
         }
 
-        function testUpdate()
+        function testUpdateName()
         {
             // Arrange
             $name = "Mrs. N.";
@@ -179,13 +179,28 @@
             $test_client = new Client($name, $stylist_id);
             $test_client->save();
             $new_name = "Mr. F.";
+
+            // Act
+            $test_client->updateName($new_name);
+
+            // Assert
+            $this->assertEquals("Mr. F.",  $test_client->getName());
+        }
+
+        function testUpdateStylistID()
+        {
+            // Arrange
+            $name = "Mrs. N.";
+            $stylist_id = 3;
+            $test_client = new Client($name, $stylist_id);
+            $test_client->save();
             $new_stylist_id = 4;
 
             // Act
-            $test_client->update($new_name, $new_stylist_id);
+            $test_client->updateStylistID($new_stylist_id);
 
             // Assert
-            $this->assertEquals(["Mr. F.", 4],  [$test_client->getName(), $test_client->getStylistID()]);
+            $this->assertEquals(4, $test_client->getStylistID());
         }
 
         function testDelete()
