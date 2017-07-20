@@ -32,7 +32,7 @@ Simple app allowing the user to view, add, edit, and delete clients and stylists
 
 ## Known Bugs
 
-The view individual clients and edit client routes are missing currently.
+Adding a client without choosing a stylist from the dropdown will return an error.
 
 ## Support and contact details
 
